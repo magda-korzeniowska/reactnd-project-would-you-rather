@@ -28,7 +28,7 @@ let users = {
   erik_roman: {
     id: 'erikroman',
     name: 'Erik Roman',
-    avatarURL: ,
+    avatarURL: erik,
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
