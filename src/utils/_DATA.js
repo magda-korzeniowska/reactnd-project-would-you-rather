@@ -3,7 +3,7 @@ import vipin from '../images/vipin-cordoba.jpg'
 import erik from '../images/erik-roman.jpg'
 
 let users = {
-  angie_newman: {
+  angienewman: {
     id: 'angienewman',
     name: 'Angie Newman',
     avatarURL: angie,
@@ -15,7 +15,7 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  vipin_cordoba: {
+  vipincordoba: {
     id: 'vipincordoba',
     name: 'Vipin Cordoba',
     avatarURL: vipin,
@@ -25,7 +25,7 @@ let users = {
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  erik_roman: {
+  erikroman: {
     id: 'erikroman',
     name: 'Erik Roman',
     avatarURL: erik,
