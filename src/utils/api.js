@@ -20,5 +20,5 @@ export function saveQuestion (question) {
 }
 
 export function saveQuestionAnswer (answer) {
-  return _saveQuestion(answer)
+  return _saveQuestionAnswer(answer)
 }

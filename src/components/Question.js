@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { saveQuestionAnswer } from '../actions/questions'
+import { handleAddQuestionAnswer } from '../actions/questions'
 
 class Question extends Component {
 
@@ -20,17 +20,21 @@ class Question extends Component {
     const { dispatch, question, authedUser } = this.props
     const { option } = this.state
 
-    dispatch(saveQuestionAnswer({
-      authedUser,
-      qid: question,
-      option
-    }))
+    if (option === '') {
+      alert('Please select an answer')
+    } else {
+      dispatch(handleAddQuestionAnswer({
+        authedUser,
+        qid: question.id,
+        answer: option
+      }))
+    }
   }
 
   render() {
-    console.log(this.props)
+    console.log('QUESTION: ', this.props.question)
     const { authedUser, question, users } = this.props
-    // console.log(question)
+
     return (
       <div className='question'>
         <img
