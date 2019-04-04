@@ -37,31 +37,32 @@ class Question extends Component {
 
     return (
       <div className='question'>
-        <img
-          src={users[question.author].avatarURL}
-          alt={`Avatar of ${users[question.author].name}`}
-          className='user-avatar'
-        />
 
        <form className="question-form" onSubmit={this.handleSubmit}>
          {authedUser === question.author
            ? <div className="question-author">You asked:</div>
            : <div className="question-author">{users[question.author].name} asks:</div>}
-         <h3> Would you rather... </h3>
-         <div>
+         <h3 className='question-form-title'>Would you rather...</h3>
+         <div className='choice'>
            <input type='radio' name='options' value='optionOne'
             id='optionOne' onChange={this.handleChange}/>
-           <label className="question-choice" htmlFor='optionOne'> {question.optionOne.text} </label>
+           <label className="question-choice option-one" htmlFor='optionOne'>{question.optionOne.text}</label>
            <br/>
 
            <input type='radio' name='options' value='optionTwo'
             id='optionTwo' onChange={this.handleChange}/>
-           <label className="question-choice" htmlFor='optionTwo'>{question.optionTwo.text}</label>
+           <label className="question-choice option-two" htmlFor='optionTwo'>{question.optionTwo.text}</label>
            <br/>
 
-           <button className='question-btn' type='submit'>Submit</button>
+           <button className='submit-btn' type='submit'>SUBMIT</button>
          </div>
        </form>
+
+       <img
+         src={users[question.author].avatarURL}
+         alt={`Avatar of ${users[question.author].name}`}
+         className='user-avatar'
+       />
       </div>
     )
   }

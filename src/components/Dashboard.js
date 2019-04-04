@@ -8,8 +8,10 @@ class Dashboard extends Component {
     return (
       <div className='container'>
         <div className='questions-btns'>
-          {/* <button>Questions</button>
-          <button>Answered Questions</button> */}
+          <button className='question-btn unanswered-btn'>QUESTIONS</button>
+          <button className='question-btn answered-btn'>ANSWERED QUESTIONS</button>
+        </div>
+        <div>
           <ul className='questions-list'>
             {this.props.questionIds.map((id) => (
               <li key={id}>
