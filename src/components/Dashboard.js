@@ -1,34 +1,73 @@
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
+import Results from './Results'
 
 class Dashboard extends Component {
+
+  state = {
+    showUnansweredQuestions: true
+  }
+
+  showQuestions = () => {
+    this.setState({
+      showUnansweredQuestions: true
+    })
+  }
+
+  showResults = () => {
+    this.setState({
+      showUnansweredQuestions: false
+    })
+  }
+
+
   render() {
-    console.log(this.props)
+    console.log("HALLO: ", this.props.resultIds)
     return (
       <div className='container'>
         <div className='questions-btns'>
-          <button className='question-btn unanswered-btn'>QUESTIONS</button>
-          <button className='question-btn answered-btn'>ANSWERED QUESTIONS</button>
+          <button className='question-btn unanswered-btn' onClick={this.showQuestions}>QUESTIONS</button>
+          <button className='question-btn results-btn' onClick={this.showResults}>RESULTS</button>
         </div>
         <div>
-          <ul className='questions-list'>
-            {this.props.questionIds.map((id) => (
-              <li key={id}>
-                <Question id={id}/>
-              </li>
-            ))}
-          </ul>
+
+          {(this.state.showUnansweredQuestions === true) &&
+            <ul className='questions-list'>
+              {this.props.questionIds.map((id) => (
+                <li key={id}>
+                  <Question id={id}/>
+                </li>
+              ))}
+            </ul>}
+
+          {this.state.showUnansweredQuestions === false &&
+            <Results />
+          }
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps({ questions }) {
+function mapStateToProps({ authedUser, questions }) {
+
+  const unansweredQuestions = Object.values(questions)
+    .filter((question) =>
+      !question.optionOne.votes.includes(authedUser) &&
+      !question.optionTwo.votes.includes(authedUser))
+
+  const answeredQuestions = Object.values(questions)
+    .filter((question) =>
+      question.optionOne.votes.includes(authedUser) ||
+      question.optionTwo.votes.includes(authedUser))
+
   return {
-    questionIds: Object.keys(questions)
-      .sort((a,b) => b.timestamp - a.timestamp)
+    authedUser,
+    questionIds: Object.values(unansweredQuestions)
+      .sort((a,b) => b.timestamp - a.timestamp).map((question) => question.id),
+    resultIds: Object.values(answeredQuestions)
+      .sort((a,b) => b.timestamp - a.timestamp).map((question) => question.id)
   }
 }
 
