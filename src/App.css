@@ -138,6 +138,69 @@ li {
   background-color: #999999;
 }
 
+/***** RESULTS COMPONENT *****/
+
+.results {
+  width: 700px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.results-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.results-title {
+  margin-left: 80px;
+}
+
+.show-results {
+  width: 80%;
+  margin-left: 80px;
+}
+
+.results-option-one,
+.results-option-two {
+  font-weight: 700;
+  /* display: flex; */
+}
+
+.votes {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.badge-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  padding: 10px;
+  color: white;
+  background-color: grey;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  margin-right: 300px;
+  text-align: center;
+  right: 0;
+  transform: rotate(15deg);
+}
 
 .progress {
   background-color: lightgrey;
@@ -146,4 +209,5 @@ li {
 .progress-bar {
   background-color: #0088cc;
   text-align: center;
+  color: white;
 }

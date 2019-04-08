@@ -12,7 +12,7 @@ class Results extends Component {
     return (
       <div className='results'>
         <div className='results-table'>
-          <h3 className='results-title'>RESULTS</h3>
+          {/* <h3 className='results-title'>RESULTS</h3> */}
           {authedUser === question.author
             ? <div className="question-author">Asked by you:</div>
             : <div className="question-author">Asked by {users[question.author].name}:</div>}
@@ -22,27 +22,31 @@ class Results extends Component {
             <div className='results-option-one'>
               <p>...{question.optionOne.text}</p>
               {question.optionOne.votes.includes(authedUser) &&
-                <p className='choice-badge'>Your choice</p>
+                <div className='badge-wrapper'>
+                  <span className='badge'>Your choice</span>
+                </div>
               }
               <div className='progress'>
                 <div className='progress-bar' style={{width: `${(optionOneVotes / allVotes) * 100}%`}}>
                   {`${((optionOneVotes / allVotes) * 100).toFixed(0)}%`}
                 </div>
               </div>
-              <p>{optionOneVotes} out of {allVotes} votes</p>
+              <p className='votes'>{optionOneVotes} out of {allVotes} votes</p>
             </div>
 
             <div className='results-option-two'>
               <p>...{question.optionTwo.text}</p>
               {question.optionTwo.votes.includes(authedUser) &&
-                <p className='choice-badge'>Your choice</p>
+                <div className='badge-wrapper'>
+                  <span className='badge'>Your choice</span>
+                </div>
               }
               <div className='progress'>
                 <div className='progress-bar' style={{width: `${(optionTwoVotes / allVotes) * 100}%`}}>
                   {`${((optionTwoVotes / allVotes) * 100).toFixed(0)}%`}
                 </div>
               </div>
-              <p>{optionTwoVotes} out of {allVotes} votes</p>
+              <p className='votes'>{optionTwoVotes} out of {allVotes} votes</p>
             </div>
           </div>
         </div>
