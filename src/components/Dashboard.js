@@ -23,7 +23,6 @@ class Dashboard extends Component {
 
 
   render() {
-    console.log("HALLO: ", this.props.resultIds)
     return (
       <div className='container'>
         <div className='questions-btns'>
@@ -42,8 +41,13 @@ class Dashboard extends Component {
             </ul>}
 
           {this.state.showUnansweredQuestions === false &&
-            <Results />
-          }
+            <ul className='questions-list'>
+              {this.props.answeredQuestionIds.map((id) => (
+                <li key={id}>
+                  <Results id={id}/>
+                </li>
+              ))}
+            </ul>}
         </div>
       </div>
     )
@@ -66,7 +70,7 @@ function mapStateToProps({ authedUser, questions }) {
     authedUser,
     questionIds: Object.values(unansweredQuestions)
       .sort((a,b) => b.timestamp - a.timestamp).map((question) => question.id),
-    resultIds: Object.values(answeredQuestions)
+    answeredQuestionIds: Object.values(answeredQuestions)
       .sort((a,b) => b.timestamp - a.timestamp).map((question) => question.id)
   }
 }

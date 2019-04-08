@@ -137,3 +137,13 @@ li {
 .submit-btn:hover {
   background-color: #999999;
 }
+
+
+.progress {
+  background-color: lightgrey;
+}
+
+.progress-bar {
+  background-color: #0088cc;
+  text-align: center;
+}
