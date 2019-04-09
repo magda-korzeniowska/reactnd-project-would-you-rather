@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { handleAddQuestion } from '../actions/questions'
 
 class NewQuestion extends Component {
 
   state = {
     optionOne: '',
-    optionTwo: ''
+    optionTwo: '',
   }
 
   handleChangeOne = (event) => {
@@ -23,7 +25,10 @@ class NewQuestion extends Component {
     event.preventDefault()
 
     const { optionOne, optionTwo } = this.state
-    // todo: add Question to the Store
+    const { dispatch } = this.props
+
+    dispatch(handleAddQuestion(optionOne, optionTwo))
+
     console.log('New option 1: ', optionOne)
     console.log('New option 2: ', optionTwo)
 
@@ -32,6 +37,7 @@ class NewQuestion extends Component {
       optionTwo: ''
     }))
   }
+
 
   render() {
 
@@ -71,4 +77,4 @@ class NewQuestion extends Component {
   }
 }
 
-export default NewQuestion
+export default connect()(NewQuestion)
