@@ -135,6 +135,7 @@ li {
 }
 
 .submit-btn:hover {
+  color: #fdfffc;
   background-color: #999999;
 }
 
@@ -209,4 +210,48 @@ li {
   background-color: #0088cc;
   text-align: center;
   color: white;
+}
+
+/***** NewQuestion COMPONENT *****/
+
+.new-question {
+  width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.new-question-title {
+  font-size: 26px;
+  margin-top: 0;
+}
+
+.new-question-form-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.new-question-form-alternative {
+  font-size: 16px;
+}
+
+.option {
+  width: 90%;
+  font-size: 18px;
+  border: 2px solid lightgrey;
+  border-radius: 4px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.option::placeholder {
+  color: lightgrey;
+}
+
+.option:focus {
+  outline-color: #0088cc;
 }

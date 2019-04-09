@@ -47,21 +47,23 @@ class NewQuestion extends Component {
 
     return (
       <div className='new-question'>
-        <h3>Create New Question</h3>
+
+        <h3 className='new-question-title'>Create New Question</h3>
+
         <form className='new-question-form' onSubmit={this.handleSubmit}>
-          <h2 className='new-question-form-title'>Would you rather...</h2>
+          <h2 className='new-question-form-title'>Would you rather ...</h2>
           <input
             placeholder='Enter Option One Text Here'
             value={optionOne}
             onChange={this.handleChangeOne}
-            className='newOptionOne'
+            className='option newOptionOne'
           />
-          <p className='new-question-form-alternative'>OR</p>
+          <p className='new-question-form-alternative'>or</p>
           <input
             placeholder='Enter Option Two Text Here'
             value={optionTwo}
             onChange={this.handleChangeTwo}
-            className='newOptionTwo'
+            className='option newOptionTwo'
           />
         <br/>
           <button
@@ -70,7 +72,6 @@ class NewQuestion extends Component {
             disabled={optionOne === '' || optionTwo === ''}>
               SUBMIT
           </button>
-
         </form>
       </div>
     )
