@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestionAnswer } from '../actions/questions'
+import { Link } from 'react-router-dom'
 
 class Question extends Component {
 
@@ -33,9 +34,10 @@ class Question extends Component {
 
   render() {
     console.log('QUESTION: ', this.props.question)
-    const { authedUser, question, users } = this.props
+    const { authedUser, question, users, id } = this.props
 
     return (
+      // <Link to={`question/${id}`} className='question'>
       <div className='question'>
 
        <form className="question-form" onSubmit={this.handleSubmit}>
@@ -63,7 +65,7 @@ class Question extends Component {
          alt={`Avatar of ${users[question.author].name}`}
          className='user-avatar'
        />
-      </div>
+     </div>
     )
   }
 }
