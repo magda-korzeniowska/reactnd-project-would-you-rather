@@ -8,22 +8,22 @@ class Leaderboard extends Component {
       <div className='leaderboard'>
         <h2 className='leaderboard-title'>Leaderboard</h2>
         {this.props.users.map((user) => (
-          <div className='user-card' key={user.id}>
-            <img
-              src={user.avatarURL}
-              alt={`Avatar of ${user.name}`}
-              className='user-avatar'
-            />
-            <div className='leaderboard-details'>
-              <h4 className='user-name'>{user.name}</h4>
-              <p className='details'>Answered questions: {user.answersNo}</p>
-              <p className='details'>Added questions: {user.questionsNo}</p>
-            </div>
-            <div className='total-score'>
-              <p>Total score</p>
-              <p>{user.answersNo + user.questionsNo}</p>
-            </div>
+        <div className='user-card' key={user.id}>
+          <img
+            src={user.avatarURL}
+            alt={`Avatar of ${user.name}`}
+            className='user-avatar leaderboard-user-avatar'
+          />
+          <div className='leaderboard-details'>
+            <h4 className='user-name'>{user.name}</h4>
+            <p className='details'>Answered questions: {user.answersNo}</p>
+            <p className='details'>Added questions: {user.questionsNo}</p>
           </div>
+          <div className='total-score'>
+            <p>Total score</p>
+            <p>{user.answersNo + user.questionsNo}</p>
+          </div>
+        </div>
         ))}
       </div>
     )

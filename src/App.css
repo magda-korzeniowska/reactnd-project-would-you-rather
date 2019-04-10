@@ -255,3 +255,48 @@ li {
 .option:focus {
   outline-color: #0088cc;
 }
+
+/***** LEADERBOARD COMPONENT *****/
+
+.user-card {
+  width: 700px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-name {
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.leaderboard-user-avatar {
+  margin: auto;
+}
+
+.leaderboard-details {
+  margin-left: 40px;
+  flex: 2;
+}
+
+.total-score {
+  flex: 1;
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.total-score p:first-child {
+  margin-bottom: 16px;
+}
+
+.total-score p:last-child {
+  margin-top: 0;
+}
