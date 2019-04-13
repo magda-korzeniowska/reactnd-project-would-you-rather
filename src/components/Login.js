@@ -27,7 +27,7 @@ class Login extends Component {
               >
               <div className='card-body'>
                 <img className='card-avatar' alt={users[user].name} src={users[user].avatarURL} height='80' />
-                <a className='card-name'>{users[user].name}</a>
+                <p className='card-name'>{users[user].name}</p>
               </div>
             </li>
           ))}

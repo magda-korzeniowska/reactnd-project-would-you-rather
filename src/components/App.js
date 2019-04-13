@@ -6,7 +6,6 @@ import Dashboard from './Dashboard'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
 import QuestionPage from './QuestionPage'
-import Nav from './Nav'
 import Login from './Login'
 import LoadingBar from 'react-redux-loading'
 import '../App.css';

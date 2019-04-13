@@ -317,6 +317,7 @@ a {
 /***** NAV COMPONENT *****/
 
 .nav {
+  width: 700px;
   font-size: 18px;
   letter-spacing: 1.5px;
   margin-top: 30px;
@@ -324,20 +325,32 @@ a {
 
 .nav-ul {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-items {
   padding-right: 20px;
 }
 
+.logout {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
 
-/* .nav-avatar {
+.nav-avatar {
   object-fit: cover;
-  border-radius:50%;
+  border-radius: 50%;
   width: 30px;
   height: 30px;
   margin-right: 10px;
-} */
+  vertical-align: middle;
+}
+
+.logged-name {
+  font-weight: 700;
+}
 
 /***** LOGIN COMPONENT *****/
 

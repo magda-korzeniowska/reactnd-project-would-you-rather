@@ -5,17 +5,17 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
 
-  handleLogout = (e) => {
+  handleLogout = () => {
     const { dispatch } = this.props
     dispatch(setAuthedUser(null))
   }
 
   render() {
 
-    // const { authedUser, users } = this.props
-    // // const loggedIn = authedUser !== null
-    //
-    // console.log(authedUser)
+    const { authedUser, users } = this.props
+    // const loggedIn = authedUser !== null
+
+    console.log(authedUser)
 
     return (
       <nav className='nav'>
@@ -35,12 +35,12 @@ class Nav extends Component {
               LEADERBOARD
             </NavLink>
           </li>
-          {/* <li className='nav-items'>
+          <li className='nav-items logout'>
             <NavLink to={'/'} activeClassName='active' onClick={this.handleLogout}>
-              <img className='nav-user-avatar' alt='user-avatar' src={users[authedUser].avatarURL} />
-              LOGOUT
+              <img className='nav-avatar' alt='user-avatar' src={users[authedUser].avatarURL} />
+              <span className='logged-name'>{users[authedUser].name}</span> LOGOUT
             </NavLink>
-          </li> */}
+          </li>
 
         </ul>
       </nav>
@@ -48,17 +48,11 @@ class Nav extends Component {
   }
 }
 
-// export default function Nav() {
-//   return (
-//
-//   )
-// }
+function mapStateToProps({ authedUser, users }) {
+  return {
+    authedUser,
+    users
+  }
+}
 
-// function mapStateToProps({ authedUser, users }) {
-//   return {
-//     authedUser,
-//     users
-//   }
-// }
-
-export default connect()(Nav)
+export default connect(mapStateToProps)(Nav)
