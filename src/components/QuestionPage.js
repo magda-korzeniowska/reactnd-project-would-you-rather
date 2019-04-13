@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
+import Nav from './Nav'
 
 class QuestionPage extends Component {
   render() {
@@ -9,10 +10,13 @@ class QuestionPage extends Component {
 
     return (
       <div>
-        <h3 className='center'>Question</h3>
-        <Question id={id} />
+        <Nav />
+        <div className='question-page-container'>
+          <h3 className='question-page-title'>Question</h3>
+          <Question id={id} />
+        </div>
       </div>
-  );
+    )
   }
 }
 

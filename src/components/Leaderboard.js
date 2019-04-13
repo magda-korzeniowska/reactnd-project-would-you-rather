@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Nav from './Nav'
 
 class Leaderboard extends Component {
   render() {
     console.log(this.props.users)
     return (
-      <div className='leaderboard'>
+      <div className='leaderboard-container'>
+        <Nav />
         <h2 className='leaderboard-title'>Leaderboard</h2>
         {this.props.users.map((user) => (
-        <div className='user-card' key={user.id}>
+        <div className='leaderboard-card' key={user.id}>
           <img
             src={user.avatarURL}
             alt={`Avatar of ${user.name}`}
             className='user-avatar leaderboard-user-avatar'
           />
           <div className='leaderboard-details'>
-            <h4 className='user-name'>{user.name}</h4>
+            <h4 className='leaderboard-name'>{user.name}</h4>
             <p className='details'>Answered questions: {user.answersNo}</p>
             <p className='details'>Added questions: {user.questionsNo}</p>
           </div>
