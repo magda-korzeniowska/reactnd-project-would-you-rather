@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestionAnswer } from '../actions/questions'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class Question extends Component {
 
   state = {
-    option: ''
+    option: '',
+    toHome: false
   }
 
   handleChange = (event) => {
@@ -29,15 +30,23 @@ class Question extends Component {
         qid: question.id,
         answer: option
       }))
+      this.setState(() => ({
+        toHome: true
+      }))
     }
   }
 
   render() {
     console.log('QUESTION: ', this.props.question)
     const { authedUser, question, users, id } = this.props
+    const { toHome } = this.state
+
+    if (toHome === true) {
+      return <Redirect to='/' />
+    }
 
     return (
-      // <Link to={`question/${id}`} className='question'>
+
       <div className='question'>
 
        <form className="question-form" onSubmit={this.handleSubmit}>
