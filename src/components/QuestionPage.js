@@ -12,7 +12,7 @@ class QuestionPage extends Component {
       <div>
         <Nav />
         <div className='question-page-container'>
-          <h3 className='question-page-title'>Question</h3>
+          <h2 className='question-page-title'>Answer the Question</h2>
           <Question id={id} />
         </div>
       </div>

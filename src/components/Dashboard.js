@@ -31,8 +31,11 @@ class Dashboard extends Component {
           <button className='question-btn unanswered-btn' onClick={this.showQuestions}>QUESTIONS</button>
           <button className='question-btn results-btn' onClick={this.showResults}>RESULTS</button>
         </div>
-        <div>
 
+        {(this.state.showUnansweredQuestions && this.props.questionIds.length === 0) &&
+          <div className='question-end'>No more questions!</div>}
+
+        <div>
           {(this.state.showUnansweredQuestions === true) &&
             <ul className='questions-list'>
               {this.props.questionIds.map((id) => (

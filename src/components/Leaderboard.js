@@ -4,7 +4,7 @@ import Nav from './Nav'
 
 class Leaderboard extends Component {
   render() {
-    console.log(this.props.users)
+    console.log('Leaderboard: ', this.props.users)
     return (
       <div className='leaderboard-container'>
         <Nav />

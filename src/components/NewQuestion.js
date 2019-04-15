@@ -30,18 +30,21 @@ class NewQuestion extends Component {
     const { optionOne, optionTwo } = this.state
     const { dispatch } = this.props
 
-    dispatch(handleAddQuestion(optionOne, optionTwo))
+    if (optionOne === '') {
+      alert('Please add two options')
+    } else {
+      dispatch(handleAddQuestion(optionOne, optionTwo))
 
-    console.log('New option 1: ', optionOne)
-    console.log('New option 2: ', optionTwo)
+      console.log('New option 1: ', optionOne)
+      console.log('New option 2: ', optionTwo)
 
-    this.setState(() => ({
-      optionOne: '',
-      optionTwo: '',
-      toHome: true
-    }))
+      this.setState(() => ({
+        optionOne: '',
+        optionTwo: '',
+        toHome: true
+      }))
+    }
   }
-
 
   render() {
 

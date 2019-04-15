@@ -46,13 +46,13 @@ export function handleAddQuestion(optionOne, optionTwo) {
 
 export function handleAddQuestionAnswer(info) {
   return (dispatch) => {
-    dispatch(addQuestionAnswer(info))
+
+    dispatch(showLoading())
 
     return saveQuestionAnswer(info)
-      .catch((error) => {
-        console.warn('Error in handleAddQuestionAnswer: ', error)
+      .then(() => {
         dispatch(addQuestionAnswer(info))
-        alert('There was an error adding the answer. Try again.')
       })
+      .then(() => dispatch(hideLoading()))
   }
 }
