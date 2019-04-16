@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
 import Nav from './Nav'
+import { Redirect } from 'react-router-dom'
 
 class QuestionPage extends Component {
   render() {
 
-    const { id } = this.props
+    const { id, questions } = this.props;
+    const question = questions[id];
+
+    if (question === undefined) {
+      return <Redirect to='/not-found' />
+    }
 
     return (
       <div>
@@ -25,7 +31,8 @@ function mapStateToProps({ authedUser, questions }, props) {
   const { id } = props.match.params;
 
   return {
-    id
+    id,
+    questions
   }
 }
 
