@@ -9,7 +9,7 @@ import QuestionPage from './QuestionPage'
 import Login from './Login'
 import PageNotFound from './PageNotFound'
 import LoadingBar from 'react-redux-loading'
-import '../App.css';
+import '../App.css'
 
 class App extends Component {
 
@@ -36,16 +36,7 @@ class App extends Component {
                   <Route path='/login' component={Login} />
                   <Route component={PageNotFound} />
                 </Switch>
-            
             }
-            {/* {this.props.loading === true
-              ? null
-              : <Dashboard />} */}
-            {/* <NewQuestion /> */}
-            {/* <Leaderboard /> */}
-            {/* {this.props.loading === true
-              ? null
-              : <QuestionPage match={{params: {id: '6ni6ok3ym7mf1p33lnez'}}}/>} */}
           </div>
         </Fragment>
       </Router>
@@ -59,4 +50,4 @@ function mapStateToProps({ authedUser }) {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App)

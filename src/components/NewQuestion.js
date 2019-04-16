@@ -35,9 +35,6 @@ class NewQuestion extends Component {
     } else {
       dispatch(handleAddQuestion(optionOne, optionTwo))
 
-      console.log('New option 1: ', optionOne)
-      console.log('New option 2: ', optionTwo)
-
       this.setState(() => ({
         optionOne: '',
         optionTwo: '',
@@ -53,8 +50,6 @@ class NewQuestion extends Component {
     if (toHome === true) {
       return <Redirect to='/' />
     }
-
-    // todo: redirect to Dashboard (questions to answer) if submitted
 
     return (
       <div className='new-question-container'>
@@ -88,8 +83,6 @@ class NewQuestion extends Component {
           </form>
         </div>
       </div>
-
-
     )
   }
 }

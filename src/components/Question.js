@@ -37,7 +37,7 @@ class Question extends Component {
   }
 
   render() {
-    console.log('QUESTION: ', this.props.question)
+    
     const { authedUser, question, users, id } = this.props
     const { toResults } = this.state
 

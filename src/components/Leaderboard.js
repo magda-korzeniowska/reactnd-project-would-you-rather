@@ -1,35 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import Nav from './Nav'
 
-class Leaderboard extends Component {
-  render() {
-    console.log('Leaderboard: ', this.props.users)
-    return (
-      <div className='leaderboard-container'>
-        <Nav />
-        <h2 className='leaderboard-title'>Leaderboard</h2>
-        {this.props.users.map((user) => (
-        <div className='leaderboard-card' key={user.id}>
-          <img
-            src={user.avatarURL}
-            alt={`Avatar of ${user.name}`}
-            className='user-avatar leaderboard-user-avatar'
-          />
-          <div className='leaderboard-details'>
-            <h4 className='leaderboard-name'>{user.name}</h4>
-            <p className='details'>Answered questions: {user.answersNo}</p>
-            <p className='details'>Added questions: {user.questionsNo}</p>
-          </div>
-          <div className='total-score'>
-            <p>Total score</p>
-            <p>{user.answersNo + user.questionsNo}</p>
-          </div>
+function Leaderboard(props) {
+
+  const { users } = props
+
+  return (
+    <div className='leaderboard-container'>
+      <Nav />
+      <h2 className='leaderboard-title'>Leaderboard</h2>
+      {users.map((user) => (
+      <div className='leaderboard-card' key={user.id}>
+        <img
+          src={user.avatarURL}
+          alt={`Avatar of ${user.name}`}
+          className='user-avatar leaderboard-user-avatar'
+        />
+        <div className='leaderboard-details'>
+          <h4 className='leaderboard-name'>{user.name}</h4>
+          <p className='details'>Answered questions: {user.answersNo}</p>
+          <p className='details'>Added questions: {user.questionsNo}</p>
         </div>
-        ))}
+        <div className='total-score'>
+          <p>Total score</p>
+          <p>{user.answersNo + user.questionsNo}</p>
+        </div>
       </div>
-    )
-  }
+      ))}
+    </div>
+  )
 }
 
 function mapStateToProps({ users }) {

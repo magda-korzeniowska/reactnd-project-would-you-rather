@@ -472,6 +472,15 @@ a {
 .dropdown:hover .drop-btn {
   background-color: #0088cc;
 }
+
+/***** PageNotFound COMPONENT *****/
+
+.page-not-found {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
 /*** FOOTER ***/
 /*
 .footer {

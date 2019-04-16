@@ -1,37 +1,34 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-class QuestionBox extends Component {
+function QuestionBox(props) {
 
-  render() {
-    console.log('QUESTION: ', this.props.question)
-    const { authedUser, question, users, id } = this.props
+  const { authedUser, question, users, id } = props
 
-    return (
-      <div className='question-box'>
-        <div className='question-box-form'>
-          {authedUser === question.author
-            ? <div className="question-author">You asked:</div>
-            : <div className="question-author">{users[question.author].name} asks:</div>}
-          <h3 className='question-form-title'>Would you rather...</h3>
-          <div className='box-choice'>
-            <p>{question.optionOne.text}</p>
-            <p>or</p>
-            <p>{question.optionTwo.text}</p>
-          </div>
-          <Link to={`question/${id}`} className='quiz-btn'>
-            GO TO QUIZ
-          </Link>
+  return (
+    <div className='question-box'>
+      <div className='question-box-form'>
+        {authedUser === question.author
+          ? <div className="question-author">You asked:</div>
+          : <div className="question-author">{users[question.author].name} asks:</div>}
+        <h3 className='question-form-title'>Would you rather...</h3>
+        <div className='box-choice'>
+          <p>{question.optionOne.text}</p>
+          <p>or</p>
+          <p>{question.optionTwo.text}</p>
         </div>
-        <img
-          src={users[question.author].avatarURL}
-          alt={`Avatar of ${users[question.author].name}`}
-          className='user-avatar'
-        />
-     </div>
-    )
-  }
+        <Link to={`question/${id}`} className='quiz-btn'>
+          GO TO QUIZ
+        </Link>
+      </div>
+      <img
+        src={users[question.author].avatarURL}
+        alt={`Avatar of ${users[question.author].name}`}
+        className='user-avatar'
+      />
+   </div>
+  )
 }
 
 function mapStateToProps({ authedUser, users, questions }, { id }) {

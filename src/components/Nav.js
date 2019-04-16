@@ -13,9 +13,6 @@ class Nav extends Component {
   render() {
 
     const { authedUser, users } = this.props
-    // const loggedIn = authedUser !== null
-
-    console.log(authedUser)
 
     return (
       <nav className='nav'>

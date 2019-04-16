@@ -22,8 +22,11 @@ class Dashboard extends Component {
     })
   }
 
-
   render() {
+
+    const { showUnansweredQuestions } = this.state
+    const { questionIds, answeredQuestionIds } = this.props
+
     return (
       <div className='dashboard-container'>
         <Nav />
@@ -32,22 +35,22 @@ class Dashboard extends Component {
           <button className='question-btn results-btn' onClick={this.showResults}>RESULTS</button>
         </div>
 
-        {(this.state.showUnansweredQuestions && this.props.questionIds.length === 0) &&
+        {(showUnansweredQuestions && questionIds.length === 0) &&
           <div className='question-end'>No more questions!</div>}
 
         <div>
-          {(this.state.showUnansweredQuestions === true) &&
+          {(showUnansweredQuestions === true) &&
             <ul className='questions-list'>
-              {this.props.questionIds.map((id) => (
+              {questionIds.map((id) => (
                 <li key={id}>
                   <QuestionBox id={id}/>
                 </li>
               ))}
             </ul>}
 
-          {this.state.showUnansweredQuestions === false &&
+          {showUnansweredQuestions === false &&
             <ul className='questions-list'>
-              {this.props.answeredQuestionIds.map((id) => (
+              {answeredQuestionIds.map((id) => (
                 <li key={id}>
                   <Results id={id}/>
                 </li>
