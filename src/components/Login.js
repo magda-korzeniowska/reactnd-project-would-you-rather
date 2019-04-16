@@ -1,18 +1,32 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 
+  state = {
+    isLogged: false
+  }
+
   handleLogin(id) {
-   const { dispatch } = this.props;
-   dispatch(setAuthedUser(id));
- }
+    const { dispatch } = this.props
+
+    dispatch(setAuthedUser(id))
+    this.setState(() => ({
+      isLogged: true
+    }))
+  }
 
   render() {
 
+    const { from } = this.props.location || { from: {pathname: '/'} }
+    const { isLogged } = this.state
     const { users } = this.props
-    console.log(users)
+
+    if (isLogged) {
+        return <Redirect to={from}/>
+    }
 
     return (
       <div className='login'>
