@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestionAnswer } from '../actions/questions'
-import { Redirect } from 'react-router-dom'
+import Results from './Results'
 
 class Question extends Component {
 
   state = {
     option: '',
-    toHome: false
+    toResults: false
   }
 
   handleChange = (event) => {
@@ -31,7 +31,7 @@ class Question extends Component {
         answer: option
       }))
       this.setState(() => ({
-        toHome: true
+        toResults: true
       }))
     }
   }
@@ -39,10 +39,10 @@ class Question extends Component {
   render() {
     console.log('QUESTION: ', this.props.question)
     const { authedUser, question, users, id } = this.props
-    const { toHome } = this.state
+    const { toResults } = this.state
 
-    if (toHome === true) {
-      return <Redirect to='/' />
+    if (toResults === true) {
+      return <Results id={id} />
     }
 
     return (

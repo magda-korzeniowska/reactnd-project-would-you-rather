@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
 import Nav from './Nav'
-import { Redirect } from 'react-router-dom'
+import PageNotFound from './PageNotFound'
 
 class QuestionPage extends Component {
   render() {
@@ -11,7 +11,7 @@ class QuestionPage extends Component {
     const question = questions[id];
 
     if (question === undefined) {
-      return <Redirect to='/not-found' />
+      return <PageNotFound />
     }
 
     return (
