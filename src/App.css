@@ -253,7 +253,7 @@ a {
 
 .badge-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -268,9 +268,7 @@ a {
   font-size: 16px;
   font-weight: 300;
   font-style: italic;
-  margin-right: 300px;
   text-align: center;
-  right: 0;
   transform: rotate(15deg);
 }
 
