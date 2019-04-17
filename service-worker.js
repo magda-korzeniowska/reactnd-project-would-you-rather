@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/reactnd-project-would-you-rather/precache-manifest.acabe0188f988cc3be92b383687692ec.js"
+  "/reactnd-project-would-you-rather/precache-manifest.98aa0f0536accf118869ebbf22489f5f.js"
 );
 
 workbox.clientsClaim();
