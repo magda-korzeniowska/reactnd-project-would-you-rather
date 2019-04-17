@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/reactnd-project-would-you-rather/static/js/runtime~main.ea9e1c82.js"
   },
   {
-    "revision": "7fd95c8ed4493639e576",
+    "revision": "19a6da1bed6302403b71",
     "url": "/reactnd-project-would-you-rather/static/js/main.dc995e78.chunk.js"
   },
   {
@@ -24,11 +24,11 @@ self.__precacheManifest = [
     "url": "/reactnd-project-would-you-rather/static/js/2.6e8eee03.chunk.js"
   },
   {
-    "revision": "7fd95c8ed4493639e576",
-    "url": "/reactnd-project-would-you-rather/static/css/main.9485ab6e.chunk.css"
+    "revision": "19a6da1bed6302403b71",
+    "url": "/reactnd-project-would-you-rather/static/css/main.fc051e97.chunk.css"
   },
   {
-    "revision": "2fc0724e9b71a29625843976895e9f24",
+    "revision": "da5faf9e75692da8655a3592c8a0e00a",
     "url": "/reactnd-project-would-you-rather/index.html"
   }
 ];
