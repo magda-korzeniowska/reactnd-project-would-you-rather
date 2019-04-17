@@ -46,9 +46,9 @@ class Login extends Component {
             </li>
           ))}
         </ul>
-        {/* <footer className="footer">
+        <footer className='footer'>
           <p>App created for UDACITY React Nanodegree</p>
-        </footer> */}
+        </footer>
       </div>
     )
   }

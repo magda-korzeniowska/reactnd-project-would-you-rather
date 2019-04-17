@@ -379,7 +379,6 @@ a {
   margin-top: 0;
 }
 
-
 /***** NAV COMPONENT *****/
 
 .nav {
@@ -482,14 +481,15 @@ a {
 }
 
 /*** FOOTER ***/
-/*
-.footer {
-  position: absolute;
-  right: 40px;
 
+.footer {
+  right: 40px;
+  bottom: 0%;
+  position: fixed;
 }
 
 .footer p {
   color: #000;
   font-size: 0.8em;
-} */
+  text-align: right;
+}
