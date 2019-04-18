@@ -9,22 +9,22 @@ function Leaderboard(props) {
     <div className='leaderboard-container'>
       <h2 className='leaderboard-title'>Leaderboard</h2>
       {users.map((user) => (
-      <div className='leaderboard-card' key={user.id}>
-        <img
-          src={user.avatarURL}
-          alt={`Avatar of ${user.name}`}
-          className='user-avatar leaderboard-user-avatar'
-        />
-        <div className='leaderboard-details'>
-          <h4 className='leaderboard-name'>{user.name}</h4>
-          <p className='details'>Answered questions: {user.answersNo}</p>
-          <p className='details'>Added questions: {user.questionsNo}</p>
+        <div className='leaderboard-card' key={user.id}>
+          <img
+            src={user.avatarURL}
+            alt={`Avatar of ${user.name}`}
+            className='user-avatar leaderboard-user-avatar'
+          />
+          <div className='leaderboard-details'>
+            <h4 className='leaderboard-name'>{user.name}</h4>
+            <p className='details'>Answered questions: {user.answersNo}</p>
+            <p className='details'>Added questions: {user.questionsNo}</p>
+          </div>
+          <div className='total-score'>
+            <p>Total score</p>
+            <p>{user.answersNo + user.questionsNo}</p>
+          </div>
         </div>
-        <div className='total-score'>
-          <p>Total score</p>
-          <p>{user.answersNo + user.questionsNo}</p>
-        </div>
-      </div>
       ))}
     </div>
   )
