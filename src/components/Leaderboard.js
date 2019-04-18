@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Nav from './Nav'
 
 function Leaderboard(props) {
 
@@ -8,7 +7,6 @@ function Leaderboard(props) {
 
   return (
     <div className='leaderboard-container'>
-      <Nav />
       <h2 className='leaderboard-title'>Leaderboard</h2>
       {users.map((user) => (
       <div className='leaderboard-card' key={user.id}>

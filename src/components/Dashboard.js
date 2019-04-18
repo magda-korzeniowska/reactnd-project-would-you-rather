@@ -2,7 +2,6 @@ import React, { Component} from 'react'
 import { connect } from 'react-redux'
 import QuestionBox from './QuestionBox'
 import Results from './Results'
-import Nav from './Nav'
 
 class Dashboard extends Component {
 
@@ -29,7 +28,6 @@ class Dashboard extends Component {
 
     return (
       <div className='dashboard-container'>
-        <Nav />
         <div className='questions-btns'>
           <button className='question-btn unanswered-btn' onClick={this.showQuestions}>QUESTIONS</button>
           <button className='question-btn results-btn' onClick={this.showResults}>RESULTS</button>

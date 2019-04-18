@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
-import Nav from './Nav'
 import PageNotFound from './PageNotFound'
 
 function QuestionPage(props) {
@@ -14,13 +13,10 @@ function QuestionPage(props) {
   }
 
   return (
-    <div>
-      <Nav />
-      <div className='question-page-container'>
-        <h2 className='question-page-title'>Answer the Question</h2>
-        <Question id={id} />
-      </div>
-    </div>
+    <div className='question-page-container'>
+      <h2 className='question-page-title'>Answer the Question</h2>
+      <Question id={id} />
+    </div>  
   )
 }
 
